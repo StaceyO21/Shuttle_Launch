@@ -27,37 +27,12 @@ public class Main {
         double crewMassKg = astronautCount * averageAstronautMassKg;
         double totalMassKg = crewMassKg + fuelMassKg + shuttleMassKg;
 
-        if(astronautCount <= 7){
-            System.out.println("Launch");
-        } else {
-            System.out.println("Hold");
-        }
-
-        if(astronautStatus.equals("ready")){
-            System.out.println("Launch");
-        } else {
-            System.out.println("Hold");
-        }
-
-        if(totalMassKg < maximumMassLimit){
-            System.out.println("Launch");
-        } else {
-            System.out.println("Hold");
-        }
-
-        if(fuelTempCelsius <= -300 || fuelTempCelsius >= -150){
-            System.out.println("Launch");
-        } else {
-            System.out.println("Hold");
-        }
-
-        if(fuelLevel.equals("100%")){
-            System.out.println("Launch");
-        } else {
-            System.out.println("Hold");
-        }
-
-        if(weatherStatus.equals("clear")){
+        if(astronautCount <= 7 &&
+                astronautStatus.equals("ready") &&
+                totalMassKg < maximumMassLimit &&
+                fuelTempCelsius >+ -300 && fuelTempCelsius <= -150 &&
+                fuelLevel.equals("100%") &&
+                        weatherStatus.equals("clear")){
             System.out.println("Launch");
         } else {
             System.out.println("Hold");
